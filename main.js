@@ -1,10 +1,8 @@
 const movieList = document.getElementById('row');
 const genreList = document.getElementById('grid');
 
-
 let listOfMovies = '';
 let listOfGenres = '';
-
 
 fetch('https://silverbird-scraper.glitch.me/movies')
     .then(response => {
@@ -47,7 +45,7 @@ const optionChange = genres => {
 
 }
 
-let change = () => {
+let changeOption = () => {
 
     fetch('https://silverbird-scraper.glitch.me/movies')
         .then(response => {

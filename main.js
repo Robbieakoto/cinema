@@ -33,6 +33,20 @@ fetch('https://silverbird-scraper.glitch.me/movies')
     })
 
 
+let genre = document.getElementById('genre');
+const optionChange = genres => {
+    for (let gen in genres) {
+        let genre = genres[gen];
+
+        if (genre) {
+            let option = document.createElement('option');
+            option.text = `${genre.genresIndex} (${genre.index})`;
+            from.add(option);
+        }
+    }
+
+}
+
 let change = () => {
 
     fetch('https://silverbird-scraper.glitch.me/movies')
@@ -40,27 +54,20 @@ let change = () => {
             response.json().then((result) => {
                 result.movies.map(({ thumbnail, title, url, genres }) => {
 
-                    let options = document.getElementById('option');
-                    for (option in options) {
-                        if (option == genres) {
-                            console.log(`${genres.length}`)
-                        }
+                    optionChange(response.results)
 
-
-                    }
                     listOfGenres = listOfGenres + `
-                        <div class="col-lg-4" style="padding:10px">
-                            <div class="card" style="padding:10px">
-                                <img class="card-img-top" src="${thumbnail}">
-                                <div class="card-body">
-                                <h5 class="card-title" style="color:#2A96C8">${title}</h5>
-                                <p> <span style="color:#B34E4B"> Genre </span>: ${genres}</p>
-                                <a class="btn btn" href ="${url}" style=" background-color:#2A96C8; color:#fff">See more</a>
-                                </div>
+                    <div class="col-lg-4" style="padding:10px">
+                        <div class="card" style="padding:10px">
+                            <img class="card-img-top" src="${thumbnail}">
+                            <div class="card-body">
+                            <h5 class="card-title" style="color:#2A96C8">${title}</h5>
+                            <p> <span style="color:#B34E4B"> Genre </span>: ${genres}</p>
+                            <a class="btn btn" href ="${url}" style=" background-color:#2A96C8; color:#fff">See more</a>
                             </div>
                         </div>
-                    `
-
+                    </div>
+                `
                 })
                 genreList.innerHTML = listOfGenres;
             })

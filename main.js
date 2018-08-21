@@ -1,4 +1,6 @@
 const movieList = document.getElementById('row');
+const genreList = document.getElementById('grid');
+
 
 let listOfMovies = '';
 
@@ -36,8 +38,7 @@ let changeOption = () => {
         .then(response => {
             response.json().then((result) => {
 
-                const genreList = document.getElementById('grid');
-                let listOfGenres = [];
+                let listOfGenres = '';
 
                 result.movies.map(({ thumbnail, title, url, genres }) => {
                     genrelength = genres.length;
@@ -56,7 +57,6 @@ let changeOption = () => {
                                     </div>
                                 </div>
                             `
-
                         }
 
                     }
@@ -65,4 +65,6 @@ let changeOption = () => {
                 genreList.innerHTML = listOfGenres;
             })
         })
-}
+};
+
+genre.addEventListener("change", changeOption);

@@ -19,7 +19,7 @@
         
         .jumbotron-fluid {
             border-radius: 15px 45px;
-            background-color: #fff;
+            background-color: #0093DD;
             box-shadow: 2px 2px #dcdada;
             padding: 30px;
             color: #fff
@@ -27,7 +27,7 @@
         
         .container1 {
             padding: 20px;
-            background: #2A96C8;
+            background: #fff;
             border-radius: 15px 15px
         }
     </style>
@@ -37,8 +37,28 @@
     <div class="container" style="padding:20px">
         <div class="jumbotron jumbotron-fluid">
             <div class="container1">
-                <h1 class="display-4">SilverBird Cinema</h1>
-                <p class="lead">Find list of all movies showing at silverBird here</p>
+                <div class="container">
+
+                    <div class="ui secondary  menu">
+                        <img src="stv-cinemas-logo-small.png">
+                        <div class="item">
+                            <div class="ui category search">
+                                <div class="ui icon input">
+                                    <input class="prompt" type="text" placeholder="Search animals...">
+                                    <i class="search icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right menu">
+                            <a class="item">
+                                        Prices & Promos
+                                    </a>
+                            <a class="item">
+                                        Contact
+                                    </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -69,7 +89,7 @@
             </ul>
 
 
-            <div class="row" id="grid">
+            <div class="row movie-list" id="grid">
             </div>
 
         </div>

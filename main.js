@@ -65,6 +65,6 @@ let changeOption = () => {
                 genreList.innerHTML = listOfGenres;
             })
         })
-};
 
+};
 genre.addEventListener("change", changeOption);

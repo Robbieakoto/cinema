@@ -7,7 +7,7 @@ let listOfMovies = '';
 fetch('https://silverbird-scraper.glitch.me/movies')
     .then(response => {
         response.json().then((result) => {
-            result.movies.map(({ thumbnail, title, url, showtime, release }) => {
+            result.movies.map(({ thumbnail, title, url, showtime, length, release, rating }) => {
                 listOfMovies = listOfMovies +
                     `
                     <div class="col-lg-4 col-md-6" style="padding:10px">
@@ -16,7 +16,9 @@ fetch('https://silverbird-scraper.glitch.me/movies')
                             <div class="card-body">
                             <h5 class="card-title" style="color:#2A96C8;font-weight:700">${title}</h5>
                             <p> <span style="color:#B34E4B">Showtime</span> :  ${showtime} </p>
+                            <p> <span style="color:#B34E4B">Length</span> :  ${length} </p>
                             <p><span style="color:#B34E4B">Release date</span> :  ${release}</p>
+                            <p> <span style="color:#B34E4B">Rated</span> :  ${rating} </p>
                             <a class="btn btn" href ="${url}" style=" background-color:#2A96C8; color:#fff">See more</a>
                             </div>
                         </div>
